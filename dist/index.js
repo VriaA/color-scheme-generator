@@ -43,9 +43,7 @@ form.addEventListener('submit', e=> {
     seedColor = colorPicker.value.slice(1)
     count = selectCountEl.value
     mode = selectModeEl.value 
-    if(mode !== 'select mode') {
         getColors()
-    }
 })
 
 //FETCHES DATA USING THE COLOR API AND RETURNED COLORS ARE SAVED TO colorArr
