@@ -34,9 +34,10 @@
                 <header class="relative flex justify-center w-full dark:text-slate-50 px-2 pt-8">
                     <h1 class="font-normal font-inter text-center text-3xl md:text-5xl">Color Scheme Generator</h1>
 
-                    <div class="absolute flex flex-col items-center w-fit top-[7%] md:top-[15%] right-[3%] md:right-[5%]">
+                    <div class="absolute flex flex-col items-center w-fit top-[7%] md:top-[15%] right-[3%] md:right-[5%] z-50">
                         <span id="settings-icon" class="material-symbols-outlined text-slate-950 dark:text-slate-50
-                                     hover:drop-shadow-settings text-3xl cursor-pointer">
+                                     hover:drop-shadow-settings active:drop-shadow-settings drop-shadow-none text-3xl 
+                                     transition-transform active:translate-y-1 translate-y-0 cursor-pointer" title="Settings">
                             settings
                         </span>
 
@@ -44,7 +45,7 @@
 
                             <label id="light-theme-label" for="light-theme" class="flex items-center pt-2 px-2">
                                 <span class="material-symbols-outlined text-yellow-500 text-3xl cursor-pointer
-                                                                 hover:drop-shadow-settings drop-shadow-none" title="Change theme">
+                                                                 hover:drop-shadow-settings active:drop-shadow-settings drop-shadow-none" title="Light theme">
                                 light_mode
                                 </span>
                                 <input type="radio" id="light-theme" class="hidden theme-radio-btn" name="theme">
@@ -52,7 +53,7 @@
 
                             <label id="dark-theme-label" for="dark-theme" class="flex items-center pt-2 px-2">
                                 <span class="material-symbols-outlined text-3xl text-cyan-400 cursor-pointer
-                                                                hover:drop-shadow-settings" title="Dark mode">
+                                                                hover:drop-shadow-settings active:drop-shadow-settings drop-shadow-none" title="Dark theme">
                                 dark_mode
                                 </span>
                                 <input type="radio" id="dark-theme" class="hidden theme-radio-btn" name="theme">
@@ -60,7 +61,7 @@
                             
                             <label id="device-default-label" for="device-default" class="flex items-center pt-2 px-2 pb-2">
                                 <span class="material-symbols-outlined text-3xl text-indigo-600 cursor-pointer
-                                            hover:drop-shadow-settings" title="Device default">
+                                            hover:drop-shadow-settings active:drop-shadow-settings drop-shadow-none" title="Device default">
                                     devices
                                 </span>
                                 <input type="radio" id="device-default" class="hidden theme-radio-btn" name="theme">
@@ -73,11 +74,12 @@
     
                     <div class="font-normal text-slate-900 dark:text-slate-50 w-full max-w-2xl h-fit text-sm md:text-lg tracking-wider">
                         <form id="form" class="flex justify-between px-3 gap-2 py-8">
-                            <input id="color-picker" class="h-14 w-20 font-inter shadow-inputShadow" type="color" aria-label="color-picker" title="Choose color">
+                            <input id="color-picker" class="h-14 w-20 font-inter shadow-inputShadow cursor-pointer" type="color" aria-label="color-picker" title="Choose color">
     
                             <select id="select-mode-el" class="w-fit font-inter bg-slate-50/30 dark:bg-gray-950/30 
                                                                outline-none border border-gray-300 font-medium
-                                                               rounded-md shadow-inputShadow tracking-wider px-2"
+                                                               rounded-md shadow-inputShadow tracking-wider px-2
+                                                               cursor-pointer"
                                                                title="Select mode">
                                 <option class="capitalize" selected>select mode</option>
                                 <option class="capitalize">monochrome</option>
@@ -92,7 +94,8 @@
 
                             <select id="select-count-el" class="w-fit font-inter bg-slate-50/30 dark:bg-gray-950/30 
                                                                 outline-none border border-gray-300 font-medium
-                                                                rounded-md shadow-inputShadow tracking-wider px-2"
+                                                                rounded-md shadow-inputShadow tracking-wider px-2
+                                                                 cursor-pointer"
                                                                 title="Select count">
                                 <option>3</option>
                                 <option selected>6</option>
@@ -100,10 +103,10 @@
                             </select>
     
                             <button id="get-color-scheme-btn" 
-                            class=" bg-slate-50/80 dark:bg-gray-950/80 font-inter border border-gray-300
-                                      rounded-md px-4 shadow-inputShadow hover:bg-slate-900 hover:text-slate-50
-                                      font-semibold tracking-wider dark:hover:bg-slate-50 
-                                    dark:hover:text-slate-900"
+                            class=" hover:bg-slate-900 dark:hover:bg-slate-50 bg-slate-50/80 dark:bg-gray-950/80
+                                    hover:text-slate-50 dark:hover:text-slate-900 font-inter border border-gray-300
+                                      rounded-md px-4 shadow-inputShadow font-semibold tracking-wider
+                                      transition-transform active:translate-y-1 translate-y-0"
                             type="submit" title="Get color Scheme">Get color scheme</button>
                         </form>
     
