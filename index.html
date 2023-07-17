@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+
+        <title>Color Scheme Generator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        
+        <link rel="stylesheet" type="text/css" href="dist/output.css">
+    </head>
+
+    <body class="relative min-h-screen bg-slate-50 dark:bg-slate-950 select-none overflow-x-hidden md:overflow-y-hidden">
+
+                <svg class="md:block absolute -left-[10%] bottom-[3%] md:bottom-[0%] -z-10 w-[300px] md:w-[45%] animate-blob1" id="10015.io" viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                    <path d="M419,320.5Q369,401,288,393Q207,385,116,364.5Q25,344,67,260.5Q109,177,156.5,129.5Q204,82,268.5,103Q333,124,401,182Q469,240,419,320.5Z" />
+                </svg>
+
+                <svg class="md:block absolute right-[-0%] top-[-10%] md:top-[-3%] -z-10 w-[300px] md:w-[25%] animate-blob2" id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                    <path d="M403,341Q356,442,255.5,414.5Q155,387,78.5,313.5Q2,240,78.5,166Q155,92,256.5,64Q358,36,404,138Q450,240,403,341Z" />
+                </svg>
+
+            <div class="flex flex-col items-center w-full min-h-screen bg-zinc-50/10 backdrop-blur-md">
+
+                <header class="relative flex justify-center w-full dark:text-slate-50 px-2 pt-8">
+                    <h1 class="font-normal font-inter text-center text-3xl md:text-5xl">Color Scheme Generator</h1>
+
+                    <div class="absolute flex flex-col items-center w-fit top-[7%] md:top-[15%] right-[3%] md:right-[5%]">
+                        <span id="settings-icon" class="material-symbols-outlined text-slate-950 dark:text-slate-50
+                                     hover:drop-shadow-settings text-3xl cursor-pointer">
+                            settings
+                        </span>
+
+                        <div id="themes" class="invisible w-fit top-[54%] bg-slate-100 dark:bg-slate-950 rounded-md overflow-hidden">
+
+                            <label id="light-theme-label" for="light-theme" class="flex items-center pt-2 px-2">
+                                <span class="material-symbols-outlined text-yellow-500 text-3xl cursor-pointer
+                                                                 hover:drop-shadow-settings drop-shadow-none" title="Change theme">
+                                light_mode
+                                </span>
+                                <input type="radio" id="light-theme" class="hidden theme-radio-btn" name="theme">
+                            </label>
+
+                            <label id="dark-theme-label" for="dark-theme" class="flex items-center pt-2 px-2">
+                                <span class="material-symbols-outlined text-3xl text-cyan-400 cursor-pointer
+                                                                hover:drop-shadow-settings" title="Dark mode">
+                                dark_mode
+                                </span>
+                                <input type="radio" id="dark-theme" class="hidden theme-radio-btn" name="theme">
+                            </label>
+                            
+                            <label id="device-default-label" for="device-default" class="flex items-center pt-2 px-2 pb-2">
+                                <span class="material-symbols-outlined text-3xl text-indigo-600 cursor-pointer
+                                            hover:drop-shadow-settings" title="Device default">
+                                    devices
+                                </span>
+                                <input type="radio" id="device-default" class="hidden theme-radio-btn" name="theme">
+                            </label>
+                    </div>
+                    </div>
+                </header>
+    
+                <main class="flex justify-center w-full">
+    
+                    <div class="font-normal text-slate-900 dark:text-slate-50 w-full max-w-2xl h-fit text-sm md:text-lg tracking-wider">
+                        <form id="form" class="flex justify-between px-3 gap-2 py-8">
+                            <input id="color-picker" class="h-14 w-20 font-inter shadow-inputShadow" type="color" aria-label="color-picker" title="Choose color">
+    
+                            <select id="select-mode-el" class="w-fit font-inter bg-slate-50/30 dark:bg-gray-950/30 
+                                                               outline-none border border-gray-300 font-medium
+                                                               rounded-md shadow-inputShadow tracking-wider px-2"
+                                                               title="Select mode">
+                                <option class="capitalize" selected>select mode</option>
+                                <option class="capitalize">monochrome</option>
+                                <option class="capitalize">monochrome-dark</option>
+                                <option class="capitalize">monochrome-light</option>
+                                <option class="capitalize">analogic</option>
+                                <option class="capitalize">complement</option>
+                                <option class="capitalize">analogic-complement</option>
+                                <option class="capitalize">triad</option>
+                                <option class="capitalize">quad</option>
+                            </select>
+
+                            <select id="select-count-el" class="w-fit font-inter bg-slate-50/30 dark:bg-gray-950/30 
+                                                                outline-none border border-gray-300 font-medium
+                                                                rounded-md shadow-inputShadow tracking-wider px-2"
+                                                                title="Select count">
+                                <option>3</option>
+                                <option selected>6</option>
+                                <option>12</option>
+                            </select>
+    
+                            <button id="get-color-scheme-btn" 
+                            class=" bg-slate-50/80 dark:bg-gray-950/80 font-inter border border-gray-300
+                                      rounded-md px-4 shadow-inputShadow hover:bg-slate-900 hover:text-slate-50
+                                      font-semibold tracking-wider dark:hover:bg-slate-50 
+                                    dark:hover:text-slate-900"
+                            type="submit" title="Get color Scheme">Get color scheme</button>
+                        </form>
+    
+                        <div id="scheme-cntr" class="w-full grid grid-cols-colors md:grid-cols-colors-md px-4 font-inter">
+         
+                        </div>
+                </main>
+            </div>
+        <script src="dist/index.js" type="module"></script>
+    </body>
+</html>
